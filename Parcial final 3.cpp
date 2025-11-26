@@ -594,7 +594,7 @@ void reporteTop5MenorStock() {
 void reporteConteoComentariosPorFecha() {
     cout << "\n========== REPORTE: CONTEO COMENTARIOS POR FECHA ==========\n";
     string fechaInput;
-    cout << "Ingrese la fecha a consultar (Formato YYYY-MM-DD): ";
+    cout << "Ingrese la fecha a consultar (Formato OBLIGATORIO YYYY-MM-DD): ";
     cin >> fechaInput;
 
     int contador = 0;
