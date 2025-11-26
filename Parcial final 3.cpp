@@ -64,7 +64,7 @@ vector<OrdenDeCompra> ordenes;
 vector<Categoria> categorias;
 
 // =====================================================
-// FUNCIÓN: limpiarString()
+// FUNCIÃ“N: limpiarString()
 // =====================================================
 string limpiarString(string str) {
     size_t inicio = str.find_first_not_of(" \t\r\n");
@@ -74,7 +74,7 @@ string limpiarString(string str) {
 }
 
 // =====================================================
-// FUNCIÓN: dividirLinea()
+// FUNCIÃ“N: dividirLinea()
 // =====================================================
 vector<string> dividirLinea(string linea) {
     vector<string> campos;
@@ -89,7 +89,7 @@ vector<string> dividirLinea(string linea) {
 }
 
 // =====================================================
-// FUNCIÓN: cargarUsuarios()
+// FUNCIÃ“N: cargarUsuarios()
 // =====================================================
 bool cargarUsuarios() {
     ifstream archivo("Usuarios.txt");
@@ -125,7 +125,7 @@ bool cargarUsuarios() {
 }
 
 // =====================================================
-// FUNCIÓN: cargarProductos()
+// FUNCIÃ“N: cargarProductos()
 // =====================================================
 bool cargarProductos() {
     ifstream archivo("Productos.txt");
@@ -160,7 +160,7 @@ bool cargarProductos() {
 }
 
 // =====================================================
-// FUNCIÓN: cargarComentarios()
+// FUNCIÃ“N: cargarComentarios()
 // =====================================================
 bool cargarComentarios() {
     ifstream archivo("Comentarios.txt");
@@ -195,7 +195,7 @@ bool cargarComentarios() {
 }
 
 // =====================================================
-// FUNCIÓN: guardarProductos()
+// FUNCIÃ“N: guardarProductos()
 // =====================================================
 bool guardarProductos() {
     ofstream archivo("Productos.txt");
@@ -220,7 +220,7 @@ bool guardarProductos() {
 }
 
 // =====================================================
-// FUNCIÓN: cargarDatos()
+// FUNCIÃ“N: cargarDatos()
 // =====================================================
 void cargarDatos() {
     cout << "\n Cargando datos desde archivos...\n";
@@ -236,12 +236,12 @@ void cargarDatos() {
         cout << " - Comentarios: " << comentarios.size() << "\n";
     } else {
         cout << " ERROR: No se pudieron cargar todos los archivos.\n";
-        cout << " Asegúrese de que los archivos TXT estén en el mismo directorio.\n";
+        cout << " AsegÃºrese de que los archivos TXT estÃ©n en el mismo directorio.\n";
     }
 }
 
 // =====================================================
-// FUNCIÓN: mostrarDatosCargados() 
+// FUNCIÃ“N: mostrarDatosCargados() 
 // =====================================================
 void mostrarDatosCargados() {
     cout << "\n========== DATOS CARGADOS ==========\n";
@@ -261,12 +261,12 @@ void mostrarDatosCargados() {
     cout << "\n--- Comentarios cargados: " << comentarios.size() << " ---\n";
     for (int i = 0; i < comentarios.size(); i++) {
         cout << comentarios[i].idComentario << " - " << comentarios[i].nombreUsuario 
-             << " comentó sobre " << comentarios[i].nombreProducto << endl;
+             << " comentÃ³ sobre " << comentarios[i].nombreProducto << endl;
     }
 }
 
 // =====================================================
-// FUNCIÓN: iniciarSesion()
+// FUNCIÃ“N: iniciarSesion()
 // =====================================================
 int iniciarSesion(){
     string correo, contrasena;
@@ -278,17 +278,17 @@ int iniciarSesion(){
 
     for (int i = 0; i < usuarios.size(); i++) {
         if (usuarios[i].correoElectronico == correo && usuarios[i].contrasena == contrasena) {
-            cout << "\n¡Bienvenido " << usuarios[i].nombre << "!\n";
+            cout << "\nÂ¡Bienvenido " << usuarios[i].nombre << "!\n";
             return i;
         }
     }
     
-    cout << "\n Usuario inválido. Correo o contraseña incorrectos.\n";
+    cout << "\n Usuario invÃ¡lido. Correo o contraseÃ±a incorrectos.\n";
     return -1;
 }
 
 // =====================================================
-// FUNCIÓN: listarProductosBajoStock() 
+// FUNCIÃ“N: listarProductosBajoStock() 
 // =====================================================
 void listarProductosBajoStock() {
     cout << "\n========== PRODUCTOS CON STOCK BAJO (<15) ==========\n";
@@ -298,7 +298,7 @@ void listarProductosBajoStock() {
         if (productos[i].stock < 15) {
             cout << "\nID: " << productos[i].idProducto << endl;
             cout << "Nombre: " << productos[i].nombre << endl;
-            cout << "Descripción: " << productos[i].descripcion << endl;
+            cout << "DescripciÃ³n: " << productos[i].descripcion << endl;
             cout << "Precio: $" << productos[i].precio << endl;
             cout << "Stock: " << productos[i].stock << " unidades " << endl;
             cout << "----------------------------------------\n";
@@ -312,7 +312,7 @@ void listarProductosBajoStock() {
 }
 
 // =====================================================
-// FUNCIÓN: convertirFecha()
+// FUNCIÃ“N: convertirFecha()
 // =====================================================
 int convertirFecha(string fecha) {
     int dia, mes, anio;
@@ -333,7 +333,7 @@ int convertirFecha(string fecha) {
 }
 
 // =====================================================
-// FUNCIÓN: listarComentariosDesdeFecha()
+// FUNCIÃ“N: listarComentariosDesdeFecha()
 // =====================================================
 void listarComentariosDesdeFecha() {
     string fechaBusqueda;
@@ -366,7 +366,7 @@ void listarComentariosDesdeFecha() {
 }
 
 // =====================================================
-// FUNCIÓN: convertirAMayusculas()
+// FUNCIÃ“N: convertirAMayusculas()
 // =====================================================
 string convertirAMayusculas(string texto) {
     for (int i = 0; i < texto.length(); i++) {
@@ -376,7 +376,7 @@ string convertirAMayusculas(string texto) {
 }
 
 // =====================================================
-// FUNCIÓN: listarUsuarios()
+// FUNCIÃ“N: listarUsuarios()
 // =====================================================
 void listarUsuarios() {
     cout << "\n========== LISTA DE USUARIOS ==========\n";
@@ -385,14 +385,14 @@ void listarUsuarios() {
         cout << "\nID: " << usuarios[i].idUsuario << endl;
         cout << "Nombre: " << convertirAMayusculas(usuarios[i].nombre) << endl;
         cout << "Correo: " << usuarios[i].correoElectronico << endl;
-        cout << "Dirección: " << usuarios[i].direccion << endl;
-        cout << "Método de Pago: " << usuarios[i].metodoDePago << endl;
+        cout << "DirecciÃ³n: " << usuarios[i].direccion << endl;
+        cout << "MÃ©todo de Pago: " << usuarios[i].metodoDePago << endl;
         cout << "----------------------------------------\n";
     }
 }
 
 // =====================================================
-// FUNCIÓN: obtenerUltimoIdCarrito()
+// FUNCIÃ“N: obtenerUltimoIdCarrito()
 // =====================================================
 int obtenerUltimoIdCarrito() {
     if (carritos.empty()) {
@@ -409,7 +409,7 @@ int obtenerUltimoIdCarrito() {
 }
 
 // =====================================================
-// FUNCIÓN: buscarProductoPorId()
+// FUNCIÃ“N: buscarProductoPorId()
 // =====================================================
 int buscarProductoPorId(int idProducto) {
     for (int i = 0; i < productos.size(); i++) {
@@ -421,7 +421,7 @@ int buscarProductoPorId(int idProducto) {
 }
 
 // =====================================================
-// FUNCIÓN: adicionarProductosCarrito()
+// FUNCIÃ“N: adicionarProductosCarrito()
 // =====================================================
 void adicionarProductosCarrito(int indiceUsuario) {
     int nuevoIdCarrito = obtenerUltimoIdCarrito();
@@ -462,7 +462,7 @@ void adicionarProductosCarrito(int indiceUsuario) {
                 cout << "Stock insuficiente. Solo hay " 
                      << productos[indiceProducto].stock << " unidades.\n";
             } else if (cantidad <= 0) {
-                cout << "Cantidad inválida.\n";
+                cout << "Cantidad invÃ¡lida.\n";
             } else {
                 for (int i = 0; i < cantidad; i++) {
                     nuevoCarrito.productosIds.push_back(idProducto);
@@ -479,7 +479,7 @@ void adicionarProductosCarrito(int indiceUsuario) {
             }
         }
         
-        cout << "\n¿Desea agregar otro producto? (s/n): ";
+        cout << "\nÂ¿Desea agregar otro producto? (s/n): ";
         cin >> continuar;
     }
     
@@ -616,7 +616,7 @@ void reporteConteoComentariosPorFecha() {
 // FUNCION: reportePreciosMinMax()
 // =====================================================
 void reportePreciosMinMax() {
-    cout << "\n========== REPORTE: PRECIOS MÁXIMO Y MÍNIMO ==========\n";
+    cout << "\n========== REPORTE: PRECIOS MÃXIMO Y MÃNIMO ==========\n";
     
     if (productos.empty()) {
         cout << "No hay productos para analizar.\n";
@@ -639,11 +639,11 @@ void reportePreciosMinMax() {
         }
     }
 
-    cout << "\nProducto con Precio Mínimo:\n";
+    cout << "\nProducto con Precio MÃ­nimo:\n";
     cout << " - Nombre: " << nombreMin << "\n";
     cout << " - Precio: $" << precioMin << "\n";
     
-    cout << "\nProducto con Precio Máximo:\n";
+    cout << "\nProducto con Precio MÃ¡ximo:\n";
     cout << " - Nombre: " << nombreMax << "\n";
     cout << " - Precio: $" << precioMax << "\n";
 }
@@ -653,14 +653,14 @@ void menuReportesParcial() {
     int opcion;
     do {
         cout << "\n+----------------------------------------+\n";
-        cout << "¦      MENÚ DE REPORTES                    ¦\n";
+        cout << "Â¦      MENÃš DE REPORTES                    Â¦\n";
         cout << "+----------------------------------------+\n";
         cout << "  1. Top 5 Productos con menor Stock\n";
         cout << "  2. Cantidad de comentarios por fecha\n";
         cout << "  3. Precios Maximo y Minimo\n";
-        cout << "  0. Volver al menú principal\n";
+        cout << "  0. Volver al menÃº principal\n";
         cout << "----------------------------------------\n";
-        cout << " Seleccione una opción: ";
+        cout << " Seleccione una opciÃ³n: ";
         cin >> opcion;
 
         switch (opcion) {
@@ -674,10 +674,10 @@ void menuReportesParcial() {
                 reportePreciosMinMax();
                 break;
             case 0:
-                cout << "Regresando al menú principal...\n";
+                cout << "Regresando al menÃº principal...\n";
                 break;
             default:
-                cout << "Opción inválida.\n";
+                cout << "OpciÃ³n invÃ¡lida.\n";
         }
         if (opcion != 0) {
             cout << "\nPresione Enter para continuar...";
@@ -695,7 +695,7 @@ void mostrarMenu(int indiceUsuario) {
     
     do {
         cout << "\n+----------------------------------------+\n";
-        cout << "¦        MENÚ PRINCIPAL                  ¦\n";
+        cout << "Â¦        MENÃš PRINCIPAL                  Â¦\n";
         cout << "+----------------------------------------+\n";
         cout << "  Usuario: " << usuarios[indiceUsuario].nombre << endl;
         cout << "----------------------------------------\n";
@@ -730,10 +730,10 @@ void mostrarMenu(int indiceUsuario) {
                 menuReportesParcial();
                 break;
             case 0:
-                cout << "\nCerrando sesión...\n";
+                cout << "\nCerrando sesiÃ³n...\n";
                 break;
             default:
-                cout << "\nOpción inválida. Intente nuevamente.\n";
+                cout << "\nOpciÃ³n invÃ¡lida. Intente nuevamente.\n";
         }
         
         if (opcion != 0 && opcion != 6) {
@@ -760,7 +760,7 @@ int main() {
     
     if (usuarios.empty() || productos.empty() || comentarios.empty()) {
         cout << "\nERROR FATAL: No se pudieron cargar los datos.\n";
-        cout << "El programa se cerrará.\n";
+        cout << "El programa se cerrarÃ¡.\n";
         return 1;
     }
     
@@ -776,7 +776,7 @@ int main() {
             mostrarMenu(indiceUsuario);
             intentarNuevamente = 'n';
         } else {
-            cout << "\n¿Desea intentar nuevamente? (s/n): ";
+            cout << "\nÂ¿Desea intentar nuevamente? (s/n): ";
             cin >> intentarNuevamente;
         }
     
@@ -784,7 +784,7 @@ int main() {
     } while (intentarNuevamente == 's' || intentarNuevamente == 'S');
     
     cout << "\n+----------------------------------------+\n";
-    cout << "¦   Gracias por usar el sistema          ¦\n";
+    cout << "Â¦   Gracias por usar el sistema          Â¦\n";
     cout << "+----------------------------------------+\n";
     
     return 0;
